@@ -1,0 +1,167 @@
+You are a senior product designer, UX strategist, and frontend developer.
+
+Create a **high-conversion "Apply to FCC" page** for:
+
+**Founders’ Circle Connect (FCC)**
+
+---
+
+PRIMARY GOAL:
+
+* Attract serious founders
+* Filter out low-intent users
+* Maximize quality applications
+
+---
+
+DESIGN STYLE:
+
+* Dark theme
+* Clean, minimal, focused
+* No distractions
+* High readability
+
+Avoid:
+
+* Heavy animations
+* Visual clutter
+
+---
+
+TOP SECTION (HERO):
+
+Headline:
+"Join the Execution-Driven Founder Ecosystem"
+
+Subtext:
+FCC is built for founders who are serious about execution, accountability, and real growth.
+
+Support Line:
+This is not open to everyone. Only committed builders are selected.
+
+CTA:
+
+* Start Application
+
+---
+
+SECTION 1: WHY APPLY
+
+Short section:
+
+Explain:
+
+* Structured execution system
+* Access to serious founders
+* Accountability and growth
+
+Keep it concise.
+
+---
+
+SECTION 2: APPLICATION FORM (MAIN FOCUS)
+
+Use a **multi-step form**.
+
+STEP 1: BASIC INFO
+
+* Name
+* Email
+
+STEP 2: STARTUP DETAILS
+
+* What are you building?
+* Stage (Idea / MVP / Revenue / Growth)
+
+STEP 3: EXPERIENCE
+
+* Background / experience
+* Previous work (optional)
+
+STEP 4: INTENT
+
+* Why do you want to join FCC?
+* What are your current goals?
+
+---
+
+FORM UX REQUIREMENTS:
+
+* Progress indicator (Step 1 → Step 4)
+* Smooth transitions between steps
+* Clear labels and placeholders
+* Required field validation
+* Clean layout (centered or split)
+
+CTA:
+
+* Final button: "Submit Application"
+
+---
+
+MICROCOPY (IMPORTANT):
+
+Set expectations clearly:
+
+Example tone:
+"FCC is built for founders who execute. If you're not actively building, this may not be the right place."
+
+---
+
+SECTION 3: SELECTION PROCESS
+
+Show simple flow:
+
+1. Application
+   Submit your details
+
+2. Evaluation
+   We assess clarity and seriousness
+
+3. Entry
+   Selected founders join FCC
+
+Keep it clean and visual.
+
+---
+
+SECTION 4: FINAL PUSH
+
+Short closing:
+
+"If you're serious about building, apply. If not, this isn’t for you."
+
+CTA:
+
+* Apply Now
+
+---
+
+UX RULES:
+
+* Focus on one action: applying
+* Remove distractions
+* Keep flow smooth
+* Maintain trust and clarity
+
+---
+
+OUTPUT FORMAT:
+
+* Clean structured content
+* Form layout suggestion
+* Optional frontend implementation
+
+---
+
+GOAL:
+
+User should feel:
+"This is serious. I need to step up."
+
+NOT:
+"This is just another signup form"
+
+---
+
+Now generate the page.

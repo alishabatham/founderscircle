@@ -1,0 +1,182 @@
+You are a senior startup strategist, UX designer, and conversion-focused copywriter.
+
+Create a **high-value "Programs / Founder Circle" page** for:
+
+**Founders’ Circle Connect (FCC)**
+
+---
+
+PRIMARY GOAL:
+
+* Clearly present what the Founder Circle program offers
+* Show structured value and outcomes
+* Make serious founders want to apply
+
+---
+
+DESIGN STYLE:
+
+* Dark theme
+* Premium, minimal, structured
+* Slightly futuristic but controlled
+* Clean layout with strong hierarchy
+
+Optional:
+
+* Subtle 3D element (rotating ring or loop)
+* Must not distract from content
+
+---
+
+TOP SECTION (HERO):
+
+Headline:
+"Founder Circle"
+
+Subtext:
+A structured program designed to help founders execute, grow, and scale with clarity and accountability.
+
+CTA:
+
+* Apply Now
+* View How It Works
+
+---
+
+SECTION 1: PROGRAM OVERVIEW
+
+Explain clearly:
+
+Founder Circle is:
+
+* A structured execution program
+* Built for serious founders
+* Focused on building real startups
+
+Important:
+
+* Not a community
+* Not networking
+* A system for execution
+
+Keep it sharp and direct.
+
+---
+
+SECTION 2: WHAT YOU GET (PROGRAM FEATURES)
+
+List core features:
+
+* Structured Execution System
+* Phase-Based Growth (Idea → MVP → Revenue → Growth)
+* Accountability & Tracking
+* Founder Collaboration Network
+* Expert Guidance (Product, Marketing, Strategy)
+* Curated Entry (Filtered founders only)
+
+Each feature:
+
+* Short title
+* 1–2 line explanation
+
+---
+
+SECTION 3: HOW THE PROGRAM WORKS
+
+Simple explanation:
+
+* You enter after selection
+* You are placed into a stage
+* You follow structured execution
+* You are tracked and reviewed
+
+Keep it easy to understand.
+
+---
+
+SECTION 4: BENEFITS (OUTCOMES)
+
+Focus on results:
+
+* Faster execution
+* Clear direction
+* Better decision-making
+* Access to serious founders
+* Real progress, not just learning
+
+Avoid generic claims.
+
+---
+
+SECTION 5: WHO THIS IS FOR
+
+* Founders building real startups
+* People ready to execute
+* Builders who want structure
+
+Also include:
+
+NOT FOR:
+
+* Passive learners
+* Idea collectors
+* Casual networkers
+
+---
+
+SECTION 6: WHY THIS MATTERS
+
+Explain:
+
+Most founders struggle because they:
+
+* Work alone
+* Lack structure
+* Don’t track progress
+
+Founder Circle solves this through:
+
+* Systems
+* Accountability
+* Real collaboration
+
+---
+
+CLOSING CTA:
+
+"Apply to Founder Circle and start executing with clarity."
+
+Button:
+
+* Apply Now
+
+---
+
+UX RULES:
+
+* Keep everything scannable
+* Use short paragraphs
+* Maintain strong spacing
+* Avoid clutter
+
+---
+
+OUTPUT FORMAT:
+
+* Clean website-ready content
+* Structured sections
+* Optional layout suggestions
+
+---
+
+GOAL:
+
+User should think:
+"This is structured, serious, and valuable"
+
+NOT:
+"This sounds like another startup program"
+
+---
+
+Now generate the page.

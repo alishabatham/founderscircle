@@ -1,0 +1,161 @@
+You are a senior startup UX designer, product thinker, and frontend developer.
+
+Create a **clear, structured "How It Works" page** for:
+
+**Founders’ Circle Connect (FCC)**
+
+---
+
+PRIMARY GOAL:
+
+Make users clearly understand:
+
+* How FCC operates
+* What happens after they apply
+* How they progress inside the system
+
+User should feel:
+"This is structured and makes sense"
+
+---
+
+DESIGN STYLE:
+
+* Dark theme
+* Minimal, structured, professional
+* Slightly futuristic but not distracting
+* Strong visual hierarchy
+
+Optional:
+
+* Subtle 3D or motion (very controlled)
+* No heavy effects
+
+---
+
+TOP SECTION (HERO):
+
+Headline:
+"How FCC Works"
+
+Subtext:
+A structured system designed to move founders from application to execution and growth.
+
+---
+
+SECTION 1: ENTRY PROCESS
+
+Show 4-step flow clearly:
+
+1. Application
+   Submit your idea and intent
+
+2. Evaluation
+   We assess clarity, seriousness, and execution mindset
+
+3. Observation
+   We monitor participation and commitment
+
+4. Selection
+   Only serious founders enter the system
+
+Design:
+
+* Horizontal or vertical step layout
+* Easy to scan
+
+---
+
+SECTION 2: EXECUTION SYSTEM
+
+Explain what happens after entry:
+
+Founders are placed into stages:
+
+* Idea Stage → Validate and refine
+* MVP Stage → Build and test
+* Revenue Stage → Monetize
+* Growth Stage → Scale
+
+Make it simple and structured.
+
+---
+
+SECTION 3: HOW PROGRESS IS TRACKED
+
+Explain accountability:
+
+* Defined tasks
+* Regular updates
+* Weekly reviews
+* Performance tracking
+
+Tone:
+
+* Direct and practical
+
+---
+
+SECTION 4: COLLABORATION
+
+Explain:
+
+* Work with other founders
+* Share resources
+* Solve real problems together
+
+Avoid generic networking language.
+
+---
+
+SECTION 5: SUPPORT SYSTEM
+
+Explain support areas:
+
+* Product development
+* Marketing
+* Strategy
+* Scaling
+
+Keep it outcome-focused.
+
+---
+
+SECTION 6: SIMPLE FLOW SUMMARY
+
+Summarize journey:
+
+Apply → Get Selected → Execute → Grow
+
+Make this visually clean and memorable.
+
+---
+
+UX RULES:
+
+* Clarity above everything
+* No long paragraphs
+* Use spacing and structure
+* Make it easy to scan quickly
+
+---
+
+OUTPUT FORMAT:
+
+* Clean structured content
+* Website-ready sections
+* Optional layout suggestions
+
+---
+
+GOAL:
+
+User should think:
+"I understand exactly how this works"
+
+NOT:
+"This sounds complicated"
+
+---
+
+Now generate the page.
