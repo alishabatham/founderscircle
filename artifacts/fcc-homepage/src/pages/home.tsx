@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronRight, XCircle, Zap, Target, Users, LayoutDashboard, Flag } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight, XCircle, Zap, Target, LayoutDashboard, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import NetworkCanvas from "@/components/NetworkCanvas";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,8 +28,8 @@ export default function HomePage() {
     <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary/30 selection:text-primary">
       {/* 1. Hero */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,180,180,0.05),transparent_50%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjRoLTR6bS0yMCAyMHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiIvPjwvZz48L3N2Zz4=')] pointer-events-none" />
+        <NetworkCanvas />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.1)_60%,transparent_100%)] pointer-events-none z-[1]" />
         
         <motion.div 
           className="container max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center"
