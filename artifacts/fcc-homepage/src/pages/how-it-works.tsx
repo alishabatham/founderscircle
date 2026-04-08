@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Cpu, BarChart, Users, Settings } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, BarChart, Users, Settings, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
