@@ -52,7 +52,7 @@ export default function HomePage() {
           backgroundPosition: 'center center'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-50/80 via-white/50 to-teal-50/80" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-slate-50/80 via-white/50 to-blue-50/80" />
         
         <div className="container max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center pt-20 pb-16">
           <motion.div 

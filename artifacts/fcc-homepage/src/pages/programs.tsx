@@ -139,7 +139,7 @@ export default function ProgramsPage() {
               </ul>
             </motion.div>
             <motion.div {...sectionProps}>
-              <h3 className="text-xl font-bold text-teal-400 mb-4">The Solution</h3>
+              <h3 className="text-xl font-bold text-blue-400 mb-4">The Solution</h3>
               <ul className="space-y-2 text-gray-300">
                 <li>• Proven Systems</li>
                 <li>• Strict Accountability</li>
