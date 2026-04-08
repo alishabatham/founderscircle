@@ -4,6 +4,10 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+- **fcc-homepage** (`/`) — Founders' Circle Connect homepage. Dark-theme, premium single-page marketing site built with React + Vite, framer-motion animations, Outfit font, sharp teal accent. 8 sections: Hero, What is FCC, The Problem, The Solution, How It Works, Who It's For, Core Benefits, Footer.
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
@@ -15,6 +19,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
+- **Frontend**: React + Vite, Tailwind CSS, framer-motion, shadcn/ui
 
 ## Key Commands
 
