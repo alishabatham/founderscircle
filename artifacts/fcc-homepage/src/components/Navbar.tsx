@@ -1,80 +1,101 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/about", label: "About Us" },
     { href: "/how-it-works", label: "How It Works" },
     { href: "/programs", label: "Programs" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm">
-      <div className="container max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-primary font-bold text-xl tracking-tight">
-            FCC
-          </Link>
+    <header className="sticky top-0 z-50 w-full">
+      {/* Announcement bar — like MU's top strip */}
+      <div className="bg-primary text-white text-center py-2 px-4 text-xs font-semibold tracking-wide">
+        Applications for the Next Cohort Are Open —&nbsp;
+        <Link href="/apply" className="underline underline-offset-2 hover:no-underline inline-flex items-center gap-1">
+          Apply Now <ArrowRight className="h-3 w-3 inline" />
+        </Link>
+      </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <div className="flex gap-6">
+      {/* Main nav */}
+      <nav className="bg-white border-b border-border">
+        <div className="container max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link href="/" className="font-black text-xl tracking-tighter text-foreground hover:text-primary transition-colors">
+              FCC
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    location === link.href ? "text-primary" : "text-muted-foreground"
+                  className={`text-sm font-medium transition-colors hover:text-foreground ${
+                    location === link.href
+                      ? "text-foreground"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <Button asChild size="sm" className="px-6 rounded-none">
-              <Link href="/apply">Apply Now</Link>
-            </Button>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden border-t border-border bg-background px-6 py-4 space-y-4">
-          <div className="flex flex-col gap-4">
-            {links.map((link) => (
+            {/* CTA — pill style like MU */}
+            <div className="hidden md:block">
               <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href ? "text-primary" : "text-muted-foreground"
-                }`}
-                onClick={() => setIsOpen(false)}
+                href="/apply"
+                className="inline-flex items-center gap-2 bg-foreground text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
               >
-                {link.label}
+                Become a Member <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-            ))}
-            <Button asChild className="w-full mt-4 rounded-none">
-              <Link href="/apply" onClick={() => setIsOpen(false)}>Apply Now</Link>
-            </Button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden text-foreground p-2"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile nav */}
+        {isOpen && (
+          <div className="md:hidden border-t border-border bg-white px-6 py-6 space-y-4">
+            <div className="flex flex-col gap-5">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-base font-medium transition-colors hover:text-foreground ${
+                    location === link.href ? "text-foreground" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/apply"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-2 bg-foreground text-white text-sm font-semibold px-6 py-3 rounded-full w-fit hover:opacity-90 transition-opacity mt-2"
+              >
+                Become a Member <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 }

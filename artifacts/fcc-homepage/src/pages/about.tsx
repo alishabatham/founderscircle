@@ -1,38 +1,55 @@
-import { CheckCircle2, Target, LayoutDashboard, ArrowRight, XCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CheckCircle2, ArrowRight, XCircle, Target, LayoutDashboard } from "lucide-react";
 import { Link } from "wouter";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
+
       {/* Hero */}
-      <section className="py-24 bg-white border-b border-border text-center px-6">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
-            Built for Founders Who <span className="text-primary">Execute</span>
+      <section className="py-32 md:py-44 border-b border-border bg-white px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-8">About Us</p>
+          <h1
+            className="font-black leading-[0.9] tracking-tight"
+            style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            Built for Founders{" "}
+            <span
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 600 }}
+              className="text-primary"
+            >
+              Who Execute
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mt-10 font-light">
             Founders' Circle Connect is a structured ecosystem designed to help founders move from ideas to execution through clarity, accountability, and the right network.
           </p>
         </div>
       </section>
 
-      {/* The Problem */}
-      <section className="py-24 px-6 bg-card border-b border-border">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Why Most Startups Fail</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+      {/* Why Startups Fail */}
+      <section className="py-28 border-b border-border bg-card px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">01 / The Problem</span>
+          <h2
+            className="font-black leading-[0.95] tracking-tight mb-16"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            Why Most{" "}
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 600 }} className="text-foreground/50">
+              Startups Fail
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
               { title: "Lack of Execution", desc: "Too much planning, not enough shipping. Action is the only metric." },
               { title: "Lack of Clarity", desc: "No clear roadmap. Jumping between tasks without structure." },
               { title: "Weak Networks", desc: "Surrounded by talkers instead of builders who hold you accountable." }
             ].map((item, i) => (
-              <div key={i} className="p-8 bg-white border border-border shadow-sm">
-                <XCircle className="h-8 w-8 text-destructive mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
+              <div key={i} className="bg-white p-10 md:p-12">
+                <XCircle className="h-8 w-8 text-destructive mb-8" />
+                <h3 className="text-2xl font-bold text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -40,31 +57,50 @@ export default function AboutPage() {
       </section>
 
       {/* What FCC Is */}
-      <section className="py-24 px-6 bg-white border-b border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 uppercase tracking-wider">
-            Not a community. Not networking. A system for execution.
-          </div>
-          <h2 className="text-3xl font-bold text-foreground mb-12">A Structured System</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Build", "Execute", "Track", "Grow"].map((step, i) => (
-              <div key={i} className="px-6 py-3 bg-card border border-border rounded shadow-sm text-lg font-medium text-foreground flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-primary" /> {step}
-              </div>
-            ))}
+      <section className="py-28 border-b border-border bg-white px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">02 / What We Are</span>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2
+                className="font-black leading-[0.95] tracking-tight mb-8"
+                style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontFamily: "'Outfit', sans-serif" }}
+              >
+                A Structured{" "}
+                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 600 }} className="text-primary">
+                  System
+                </span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg font-light">
+                Not a community. Not networking. A system for execution — built to move founders from idea to revenue with maximum accountability.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {["Build", "Execute", "Track", "Grow"].map((step, i) => (
+                <div key={i} className="px-6 py-4 bg-card border border-border text-lg font-bold text-foreground flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary" /> {step}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* How FCC Works */}
-      <section className="py-24 px-6 bg-card border-b border-border">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">How FCC Works</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+      <section className="py-28 border-b border-border bg-card px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">03 / Entry Process</span>
+          <h2
+            className="font-black leading-[0.95] tracking-tight mb-16"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            How FCC Works
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
             {["Apply", "Evaluate", "Observe", "Select"].map((step, i) => (
-              <div key={i} className="p-6 bg-white border border-border shadow-sm text-center relative">
-                <div className="text-primary font-black text-2xl mb-2">0{i+1}</div>
-                <div className="text-foreground font-semibold">{step}</div>
+              <div key={i} className="bg-white p-8 md:p-10">
+                <div className="text-5xl font-black text-primary/20 mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>0{i+1}</div>
+                <div className="text-foreground font-bold text-lg">{step}</div>
               </div>
             ))}
           </div>
@@ -72,55 +108,82 @@ export default function AboutPage() {
       </section>
 
       {/* Core System */}
-      <section className="py-24 px-6 bg-white border-b border-border">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">The Core System</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-8 border border-border bg-card shadow-sm">
-              <LayoutDashboard className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-bold text-foreground mb-2">Phase-Based Execution</h3>
-              <p className="text-muted-foreground mb-4">Structured progression from Idea → MVP → Revenue → Growth.</p>
+      <section className="py-28 border-b border-border bg-white px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">04 / Core System</span>
+          <h2
+            className="font-black leading-[0.95] tracking-tight mb-16"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            The Core System
+          </h2>
+          <div className="grid md:grid-cols-2 gap-px bg-border">
+            <div className="bg-card p-10 md:p-12">
+              <LayoutDashboard className="h-10 w-10 text-primary mb-8" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">Phase-Based Execution</h3>
+              <p className="text-muted-foreground leading-relaxed">Structured progression from Idea → MVP → Revenue → Growth.</p>
             </div>
-            <div className="p-8 border border-border bg-card shadow-sm">
-              <Target className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-bold text-foreground mb-2">Task & Performance Tracking</h3>
-              <p className="text-muted-foreground mb-4">Clear weekly targets, measurable progress, and mandatory reviews.</p>
+            <div className="bg-card p-10 md:p-12">
+              <Target className="h-10 w-10 text-primary mb-8" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">Task & Performance Tracking</h3>
+              <p className="text-muted-foreground leading-relaxed">Clear weekly targets, measurable progress, and mandatory reviews.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 px-6 bg-slate-800 border-b border-border text-center">
-        <div className="max-w-4xl mx-auto space-y-16">
-          <div>
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">Vision</h2>
-            <p className="text-2xl font-light leading-relaxed text-white">"To build a high-quality ecosystem of founders focused on execution, not noise."</p>
-          </div>
-          <div>
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">Mission</h2>
-            <p className="text-2xl font-light leading-relaxed text-white">"To help founders move from idea to execution and from execution to scalable growth through structured systems and accountability."</p>
+      <section className="py-28 border-b border-border bg-foreground text-white px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-8">Vision</p>
+              <p
+                className="leading-tight font-light text-white"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
+              >
+                "To build a high-quality ecosystem of founders focused on execution, not noise."
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-8">Mission</p>
+              <p
+                className="leading-tight font-light text-white"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
+              >
+                "To help founders move from idea to execution and from execution to scalable growth through structured systems."
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why FCC Is Different */}
-      <section className="py-24 px-6 bg-card border-b border-border">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Why FCC Is Different</h2>
-          <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded overflow-hidden shadow-sm">
+      <section className="py-28 border-b border-border bg-white px-6 md:px-12">
+        <div className="container max-w-7xl mx-auto">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">05 / Differentiation</span>
+          <h2
+            className="font-black leading-[0.95] tracking-tight mb-16"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            Why FCC Is{" "}
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 600 }} className="text-primary">
+              Different
+            </span>
+          </h2>
+          <div className="space-y-0 divide-y divide-border border-t border-border">
             {[
               { f: "Structured System", v: "Random Communities" },
               { f: "Filtered Entry", v: "Open Access" },
               { f: "Execution Tracking", v: "Passive Learning" },
               { f: "Real Collaboration", v: "Surface Networking" }
             ].map((item, i) => (
-              <div key={i} className="flex bg-white">
-                <div className="w-1/2 p-6 flex items-center gap-3 bg-primary/5 text-primary font-medium border-r border-border">
+              <div key={i} className="flex items-center py-5 gap-8">
+                <div className="flex items-center gap-3 flex-1 text-primary font-semibold">
                   <CheckCircle2 className="h-5 w-5 shrink-0" /> {item.f}
                 </div>
-                <div className="w-1/2 p-6 flex items-center gap-3 text-muted-foreground line-through decoration-muted-foreground/30">
-                  <XCircle className="h-5 w-5 shrink-0" /> {item.v}
+                <div className="flex items-center gap-3 flex-1 text-muted-foreground line-through">
+                  <XCircle className="h-5 w-5 shrink-0 text-destructive/50" /> {item.v}
                 </div>
               </div>
             ))}
@@ -128,28 +191,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Who It's For */}
-      <section className="py-24 px-6 bg-white border-b border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Who It's For</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Serious founders, ready-to-execute builders, and those who thrive on structure.
-          </p>
-          <p className="text-sm font-medium text-destructive uppercase tracking-wider">
-            Not for casual networkers or idea collectors.
-          </p>
-        </div>
-      </section>
-
       {/* Closing */}
-      <section className="py-24 px-6 bg-card text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-            FCC is where founders move from ideas to execution, and from execution to growth.
+      <section className="py-28 bg-card text-center px-6 md:px-12">
+        <div className="container max-w-4xl mx-auto">
+          <h2
+            className="font-black leading-[0.9] tracking-tight mb-10"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", fontFamily: "'Outfit', sans-serif" }}
+          >
+            FCC is where founders{" "}
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontWeight: 600 }} className="text-primary">
+              execute.
+            </span>
           </h2>
-          <Button asChild size="lg" className="rounded-none h-14 px-8 text-lg shadow-md">
-            <Link href="/apply">Apply Now <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+          <Link
+            href="/apply"
+            className="inline-flex items-center gap-2 bg-foreground text-white text-base font-semibold px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
+          >
+            Apply Now <ArrowRight className="h-5 w-5" />
+          </Link>
         </div>
       </section>
     </div>
