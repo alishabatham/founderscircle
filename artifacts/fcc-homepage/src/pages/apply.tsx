@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -28,7 +27,7 @@ type FormValues = z.infer<typeof applySchema>;
 export default function ApplyPage() {
   const [step, setStep] = useState(1);
   const { toast } = useToast();
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(applySchema),
     defaultValues: {
@@ -36,20 +35,12 @@ export default function ApplyPage() {
     }
   });
 
-  const sectionProps = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5, ease: "easeOut" }
-  };
-
   const nextStep = async () => {
     let isValid = false;
     if (step === 1) isValid = await form.trigger(["name", "email"]);
     if (step === 2) isValid = await form.trigger(["idea", "stage"]);
     if (step === 3) isValid = await form.trigger(["experience"]);
     if (step === 4) isValid = true;
-    
     if (isValid) setStep((s) => Math.min(s + 1, 4));
   };
 
@@ -61,14 +52,13 @@ export default function ApplyPage() {
       title: "Application Submitted",
       description: "We will review your application and get back to you soon.",
     });
-    // In a real app, reset form or redirect to success page
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="py-24 bg-background border-b border-border text-center px-6">
-        <motion.div {...sectionProps} className="max-w-4xl mx-auto">
+      <section className="py-24 bg-white border-b border-border text-center px-6">
+        <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Join the Execution-Driven Founder Ecosystem
           </h1>
@@ -78,7 +68,7 @@ export default function ApplyPage() {
           <div className="inline-block px-4 py-1.5 bg-destructive/10 text-destructive font-semibold text-sm tracking-widest uppercase border border-destructive/20">
             This is not open to everyone. Only committed builders are selected.
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Form Section */}
@@ -91,17 +81,17 @@ export default function ApplyPage() {
                 {step === 1 ? "Basic Info" : step === 2 ? "Startup Details" : step === 3 ? "Experience" : "Intent"}
               </span>
             </div>
-            <div className="h-2 w-full bg-white/10 rounded overflow-hidden">
+            <div className="h-2 w-full bg-border rounded overflow-hidden">
               <div className="h-full bg-primary transition-all duration-300 ease-out" style={{ width: `${(step / 4) * 100}%` }} />
             </div>
           </div>
 
-          <div className="bg-card border border-border shadow-sm p-8">
+          <div className="bg-white border border-border shadow-sm p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                
+
                 {step === 1 && (
-                  <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                  <div className="space-y-6">
                     <FormField control={form.control} name="name" render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-foreground">Name</FormLabel>
@@ -116,11 +106,11 @@ export default function ApplyPage() {
                         <FormMessage />
                       </FormItem>
                     )} />
-                  </motion.div>
+                  </div>
                 )}
 
                 {step === 2 && (
-                  <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                  <div className="space-y-6">
                     <FormField control={form.control} name="idea" render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-foreground">What are you building?</FormLabel>
@@ -147,11 +137,11 @@ export default function ApplyPage() {
                         <FormMessage />
                       </FormItem>
                     )} />
-                  </motion.div>
+                  </div>
                 )}
 
                 {step === 3 && (
-                  <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                  <div className="space-y-6">
                     <FormField control={form.control} name="experience" render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-foreground">Describe your background / experience</FormLabel>
@@ -166,11 +156,11 @@ export default function ApplyPage() {
                         <FormMessage />
                       </FormItem>
                     )} />
-                  </motion.div>
+                  </div>
                 )}
 
                 {step === 4 && (
-                  <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                  <div className="space-y-6">
                     <FormField control={form.control} name="intent" render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-foreground">Why do you want to join FCC?</FormLabel>
@@ -185,7 +175,7 @@ export default function ApplyPage() {
                         <FormMessage />
                       </FormItem>
                     )} />
-                  </motion.div>
+                  </div>
                 )}
 
                 <div className="flex justify-between pt-6 border-t border-border">
@@ -196,7 +186,6 @@ export default function ApplyPage() {
                   ) : (
                     <div />
                   )}
-                  
                   {step < 4 ? (
                     <Button type="button" onClick={nextStep} className="rounded-none" data-testid="button-apply-next">
                       Next
@@ -210,7 +199,7 @@ export default function ApplyPage() {
               </form>
             </Form>
           </div>
-          
+
           <p className="text-center text-sm text-muted-foreground mt-8">
             FCC is built for founders who execute. If you're not actively building, this may not be the right place.
           </p>
@@ -218,19 +207,19 @@ export default function ApplyPage() {
       </section>
 
       {/* Selection Process */}
-      <section className="py-24 px-6 bg-background border-b border-border">
+      <section className="py-24 px-6 bg-white border-b border-border">
         <div className="max-w-5xl mx-auto">
-          <motion.h2 {...sectionProps} className="text-2xl font-bold text-foreground mb-12 text-center">Selection Process</motion.h2>
+          <h2 className="text-2xl font-bold text-foreground mb-12 text-center">Selection Process</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { step: 1, title: "Application", desc: "Submit your details" },
               { step: 2, title: "Evaluation", desc: "We review your intent" },
               { step: 3, title: "Entry", desc: "Start executing" }
             ].map((item, i) => (
-              <motion.div key={i} {...sectionProps} transition={{ ...sectionProps.transition, delay: i * 0.1 }} className="p-6 bg-card border border-border shadow-sm text-center">
+              <div key={i} className="p-6 bg-card border border-border shadow-sm text-center">
                 <div className="text-primary font-black text-xl mb-2">{item.step}. {item.title}</div>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -238,9 +227,9 @@ export default function ApplyPage() {
 
       {/* Final Push */}
       <section className="py-24 px-6 bg-card text-center">
-        <motion.div {...sectionProps} className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground mb-8">If you're serious about building, apply. If not, this isn't for you.</h2>
-        </motion.div>
+        </div>
       </section>
     </div>
   );

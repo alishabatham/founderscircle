@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ArrowRight, Mail, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,13 +28,6 @@ export default function ContactPage() {
     defaultValues: { name: "", email: "", subject: "", message: "" }
   });
 
-  const sectionProps = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5, ease: "easeOut" }
-  };
-
   const onSubmit = (data: ContactFormValues) => {
     console.log("Contact submission:", data);
     setSubmitted(true);
@@ -43,24 +35,24 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* 1. Hero */}
-      <section className="py-24 bg-background border-b border-border text-center px-6">
-        <motion.div {...sectionProps} className="max-w-3xl mx-auto">
+      {/* Hero */}
+      <section className="py-24 bg-white border-b border-border text-center px-6">
+        <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
             Get in Touch
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Have a question or want to connect? Reach out to us directly.
           </p>
-        </motion.div>
+        </div>
       </section>
 
-      {/* 2 & 3. Contact Form & Details */}
+      {/* Contact Form & Details */}
       <section className="py-24 px-6 bg-card border-b border-border">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-start">
-          
+
           {/* Details */}
-          <motion.div {...sectionProps} className="md:col-span-2 p-8 bg-background border border-border shadow-sm">
+          <div className="md:col-span-2 p-8 bg-white border border-border shadow-sm">
             <h2 className="text-2xl font-bold text-foreground mb-6">Contact Info</h2>
             <p className="text-muted-foreground mb-8">
               We aim to respond to all serious inquiries within 24-48 hours.
@@ -73,12 +65,12 @@ export default function ContactPage() {
                 nxresearch@nxresearch.com
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form */}
-          <motion.div {...sectionProps} transition={{ ...sectionProps.transition, delay: 0.1 }} className="md:col-span-3">
+          <div className="md:col-span-3">
             {submitted ? (
-              <div className="p-12 text-center border border-border bg-background shadow-sm">
+              <div className="p-12 text-center border border-border bg-white shadow-sm">
                 <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
@@ -89,7 +81,7 @@ export default function ContactPage() {
                 </Button>
               </div>
             ) : (
-              <div className="p-8 border border-border bg-card shadow-sm">
+              <div className="p-8 border border-border bg-white shadow-sm">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
@@ -142,24 +134,22 @@ export default function ContactPage() {
                 </Form>
               </div>
             )}
-          </motion.div>
-
+          </div>
         </div>
       </section>
 
-      {/* 4. Community Invite */}
-      <section className="py-32 px-6 bg-background text-center border-t border-border">
-        <motion.div {...sectionProps} className="max-w-2xl mx-auto">
+      {/* Community Invite */}
+      <section className="py-32 px-6 bg-white text-center border-t border-border">
+        <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Want to be part of FCC?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Apply to join the ecosystem and start building with serious founders.
           </p>
-          <Button asChild size="lg" className="rounded-none h-14 px-8 text-lg shadow-md hover:scale-[1.02] transition-transform">
+          <Button asChild size="lg" className="rounded-none h-14 px-8 text-lg shadow-md">
             <Link href="/apply">Apply Now <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
 }
-
