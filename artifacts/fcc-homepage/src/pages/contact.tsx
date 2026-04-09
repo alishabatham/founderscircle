@@ -44,9 +44,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* 1. Hero */}
-      <section className="py-24 bg-gradient-to-b from-slate-50 to-white border-b border-border text-center px-6">
+      <section className="py-24 bg-background border-b border-border text-center px-6">
         <motion.div {...sectionProps} className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
             Get in Touch
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -56,16 +56,16 @@ export default function ContactPage() {
       </section>
 
       {/* 2 & 3. Contact Form & Details */}
-      <section className="py-24 px-6 bg-white border-b border-border">
+      <section className="py-24 px-6 bg-card border-b border-border">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-start">
           
           {/* Details */}
-          <motion.div {...sectionProps} className="md:col-span-2 p-8 bg-gray-50 border border-border shadow-sm">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Info</h2>
+          <motion.div {...sectionProps} className="md:col-span-2 p-8 bg-background border border-border shadow-sm">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Contact Info</h2>
             <p className="text-muted-foreground mb-8">
               We aim to respond to all serious inquiries within 24-48 hours.
             </p>
-            <div className="flex items-center gap-4 text-gray-900 font-medium">
+            <div className="flex items-center gap-4 text-foreground font-medium">
               <div className="w-10 h-10 bg-primary/10 rounded flex items-center justify-center text-primary">
                 <Mail className="h-5 w-5" />
               </div>
@@ -78,31 +78,31 @@ export default function ContactPage() {
           {/* Form */}
           <motion.div {...sectionProps} transition={{ ...sectionProps.transition, delay: 0.1 }} className="md:col-span-3">
             {submitted ? (
-              <div className="p-12 text-center border border-border bg-slate-50 shadow-sm">
+              <div className="p-12 text-center border border-border bg-background shadow-sm">
                 <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent</h3>
                 <p className="text-muted-foreground">We've received your inquiry and will get back to you shortly.</p>
                 <Button variant="outline" className="mt-8 rounded-none border-border" onClick={() => { setSubmitted(false); form.reset(); }}>
                   Send another message
                 </Button>
               </div>
             ) : (
-              <div className="p-8 border border-border bg-white shadow-sm">
+              <div className="p-8 border border-border bg-card shadow-sm">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <FormField control={form.control} name="name" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-gray-900">Name</FormLabel>
+                          <FormLabel className="text-foreground">Name</FormLabel>
                           <FormControl><Input placeholder="Your Name" className="rounded-none border-border" {...field} data-testid="input-contact-name" /></FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-gray-900">Email</FormLabel>
+                          <FormLabel className="text-foreground">Email</FormLabel>
                           <FormControl><Input placeholder="you@example.com" type="email" className="rounded-none border-border" {...field} data-testid="input-contact-email" /></FormControl>
                           <FormMessage />
                         </FormItem>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     </div>
                     <FormField control={form.control} name="subject" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900">Subject</FormLabel>
+                        <FormLabel className="text-foreground">Subject</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="rounded-none border-border" data-testid="select-contact-subject">
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     )} />
                     <FormField control={form.control} name="message" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900">Message</FormLabel>
+                        <FormLabel className="text-foreground">Message</FormLabel>
                         <FormControl><Textarea placeholder="How can we help?" className="rounded-none border-border min-h-[150px]" {...field} data-testid="input-contact-message" /></FormControl>
                         <FormMessage />
                       </FormItem>
@@ -148,9 +148,9 @@ export default function ContactPage() {
       </section>
 
       {/* 4. Community Invite */}
-      <section className="py-32 px-6 bg-gray-50 text-center border-t border-border">
+      <section className="py-32 px-6 bg-background text-center border-t border-border">
         <motion.div {...sectionProps} className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Want to be part of FCC?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Want to be part of FCC?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Apply to join the ecosystem and start building with serious founders.
           </p>

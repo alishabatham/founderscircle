@@ -52,7 +52,7 @@ export default function HomePage() {
           backgroundPosition: 'center center'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-50/80 via-white/50 to-blue-50/80" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black via-background to-background" />
         
         <div className="container max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center pt-20 pb-16">
           <motion.div 
@@ -61,12 +61,12 @@ export default function HomePage() {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border/60 text-xs text-primary mb-8 font-semibold tracking-wider uppercase shadow-sm">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border/60 text-xs text-primary mb-8 font-semibold tracking-wider uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               Founders' Circle Connect
             </motion.div>
             
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.05]">
+            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.05]">
               Build Your Startup with <br className="hidden md:block" />
               <span className="text-primary">Structure,</span> Not Chaos
             </motion.h1>
@@ -81,7 +81,7 @@ export default function HomePage() {
                   Apply for the Next Cohort <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="h-14 px-8 text-base font-medium rounded-none border-border/80 text-foreground hover:bg-gray-50" data-testid="hero-cta-learn">
+              <Button asChild variant="outline" size="lg" className="h-14 px-8 text-base font-medium rounded-none border-border/80 text-foreground hover:bg-background" data-testid="hero-cta-learn">
                 <Link href="/how-it-works">See How It Works</Link>
               </Button>
             </motion.div>
@@ -131,7 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: What FCC Is */}
-      <section className="py-24 md:py-32 border-b border-border bg-white">
+      <section className="py-24 md:py-32 border-b border-border bg-card">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-16 items-start">
             <motion.div 
@@ -141,7 +141,7 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">A system, not a community.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">A system, not a community.</h2>
               <p className="text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
                 We remove the noise. No inspirational quotes, no endless networking events. Just a rigorous framework designed to help you execute consistently.
               </p>
@@ -164,13 +164,13 @@ export default function HomePage() {
                 { num: "03", icon: <Zap className="h-5 w-5" />, title: "Execute" },
                 { num: "04", icon: <Flag className="h-5 w-5" />, title: "Grow" }
               ].map((item, i) => (
-                <div key={i} className="relative overflow-hidden p-6 bg-white border border-border shadow-sm hover:shadow-md transition-shadow group">
+                <div key={i} className="relative overflow-hidden p-6 bg-card border border-border shadow-sm hover:shadow-md transition-shadow group">
                   <div className="absolute -right-4 -bottom-6 text-7xl font-black text-gray-50/80 pointer-events-none group-hover:scale-110 transition-transform">{item.num}</div>
                   <div className="relative z-10 flex flex-col h-full justify-between gap-8">
                     <div className="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center text-primary">
                       {item.icon}
                     </div>
-                    <h3 className="text-gray-900 font-bold text-lg tracking-tight">{item.title}</h3>
+                    <h3 className="text-foreground font-bold text-lg tracking-tight">{item.title}</h3>
                   </div>
                 </div>
               ))}
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: The Problem */}
-      <section className="py-24 md:py-32 bg-gray-50 border-b border-border">
+      <section className="py-24 md:py-32 bg-background border-b border-border">
         <div className="container max-w-7xl mx-auto px-6">
           <motion.div 
             className="max-w-lg mb-16"
@@ -189,7 +189,7 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Most founders fail for the same reasons.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">Most founders fail for the same reasons.</h2>
             <p className="text-xl text-muted-foreground">It's rarely a lack of ambition. It's a lack of system.</p>
           </motion.div>
           
@@ -205,10 +205,10 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                className={`p-8 bg-white border border-border border-l-4 border-l-destructive shadow-sm ${problem.mt}`}
+                className={`p-8 bg-card border border-border border-l-4 border-l-destructive shadow-sm ${problem.mt}`}
               >
                 <XCircle className="h-7 w-7 text-destructive mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{problem.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">{problem.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{problem.desc}</p>
               </motion.div>
             ))}
@@ -217,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: The FCC Solution */}
-      <section className="py-24 md:py-32 border-b border-border bg-white overflow-hidden">
+      <section className="py-24 md:py-32 border-b border-border bg-card overflow-hidden">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-16 items-center">
             
@@ -238,11 +238,11 @@ export default function HomePage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-6">
                     <div className="w-10 h-10 rounded-full border-4 border-white bg-primary flex-shrink-0 shadow-sm relative z-10 flex items-center justify-center">
-                      <span className="w-2 h-2 bg-white rounded-full" />
+                      <span className="w-2 h-2 bg-card rounded-full" />
                     </div>
                     <div>
                       <div className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Phase {i+1}: {item.phase}</div>
-                      <div className="text-gray-900 font-medium">{item.label}</div>
+                      <div className="text-foreground font-medium">{item.label}</div>
                     </div>
                   </div>
                 ))}
@@ -251,7 +251,7 @@ export default function HomePage() {
 
             <div className="md:col-span-7">
               <motion.h2 
-                className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight"
+                className="text-4xl md:text-5xl font-bold text-foreground mb-12 leading-tight"
                 variants={sectionVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -278,7 +278,7 @@ export default function HomePage() {
                   >
                     <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-1 transition-transform group-hover:scale-110" />
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{solution.title}</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-2">{solution.title}</h3>
                       <p className="text-muted-foreground text-lg">{solution.desc}</p>
                     </div>
                   </motion.div>
@@ -291,7 +291,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: How It Works */}
-      <section className="py-24 md:py-32 bg-gray-50 border-b border-border">
+      <section className="py-24 md:py-32 bg-background border-b border-border">
         <div className="container max-w-7xl mx-auto px-6">
           <motion.div 
             className="mb-16"
@@ -301,7 +301,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <div className="text-xs tracking-widest font-semibold text-primary uppercase mb-4">Process</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Four steps. No shortcuts.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Four steps. No shortcuts.</h2>
           </motion.div>
           
           <div className="relative">
@@ -319,13 +319,13 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                  className="relative bg-white p-8 border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+                  className="relative bg-card p-8 border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
                 >
                   <div className="absolute -top-4 -right-2 text-8xl font-black text-gray-50/60 pointer-events-none group-hover:text-gray-100/50 transition-colors z-0 select-none">
                     {step.step}
                   </div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
                     <p className="text-muted-foreground">{step.desc}</p>
                   </div>
                 </motion.div>
@@ -336,7 +336,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 5: Who It's For */}
-      <section className="py-24 md:py-32 border-b border-border bg-white">
+      <section className="py-24 md:py-32 border-b border-border bg-card">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-20">
             <motion.div 
@@ -346,15 +346,15 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">Built for founders who ship.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">Built for founders who ship.</h2>
               <p className="text-xl text-muted-foreground mb-12 max-w-xl">
                 FCC is not a place to explore your feelings about entrepreneurship. It is a structured environment for those ready to do the work.
               </p>
               
               <div className="space-y-2">
-                <div className="text-sm font-bold tracking-wider uppercase text-gray-900 mb-6">For:</div>
+                <div className="text-sm font-bold tracking-wider uppercase text-foreground mb-6">For:</div>
                 {["Founders building real startups with a bias toward action", "People ready to execute and be held accountable", "Individuals who want structure, not cheerleading"].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 hover:bg-gray-50 transition-colors border-b border-transparent hover:border-border/50">
+                  <div key={i} className="flex items-start gap-4 p-4 hover:bg-background transition-colors border-b border-transparent hover:border-border/50">
                     <CheckCircle2 className="text-primary w-6 h-6 shrink-0 mt-0.5" />
                     <span className="text-gray-800 text-lg">{item}</span>
                   </div>
@@ -376,7 +376,7 @@ export default function HomePage() {
                   {["Passive learners wanting another course", "Idea collectors who never build", "Casual networkers looking for coffee chats"].map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <XCircle className="text-destructive/80 w-6 h-6 shrink-0 mt-0.5" />
-                      <span className="text-gray-900 font-medium">{item}</span>
+                      <span className="text-foreground font-medium">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -387,7 +387,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 6: The Result */}
-      <section className="py-24 md:py-32 bg-gray-50 border-b border-border">
+      <section className="py-24 md:py-32 bg-background border-b border-border">
         <div className="container max-w-7xl mx-auto px-6">
           <motion.div 
             className="mb-16"
@@ -397,11 +397,11 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <div className="text-xs tracking-widest font-semibold text-primary uppercase mb-4">Outcomes</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 max-w-2xl leading-tight">What changes when you operate with structure.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-2xl leading-tight">What changes when you operate with structure.</h2>
           </motion.div>
           
           <motion.div 
-            className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 bg-white p-8 md:p-12 border border-border shadow-sm"
+            className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 bg-card p-8 md:p-12 border border-border shadow-sm"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
@@ -415,7 +415,7 @@ export default function HomePage() {
             <div className="hidden md:block w-px h-24 bg-border" />
             
             <div className="flex flex-col">
-              <div className="text-6xl font-black text-gray-900 mb-2 tracking-tighter">100%</div>
+              <div className="text-6xl font-black text-foreground mb-2 tracking-tighter">100%</div>
               <div className="text-sm uppercase tracking-widest text-muted-foreground font-semibold">Clear Direction</div>
             </div>
             
@@ -430,11 +430,11 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-24 pb-12 bg-white">
+      <footer className="pt-24 pb-12 bg-card">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 mb-24 items-end">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none border-2 border-gray-900 text-sm font-bold text-gray-900 mb-8 tracking-widest uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none border-2 border-primary text-sm font-bold text-primary mb-8 tracking-widest uppercase">
                 <span className="w-2 h-2 bg-primary" />
                 FCC
               </div>
@@ -444,7 +444,7 @@ export default function HomePage() {
             </div>
             
             <div className="flex flex-col items-start md:items-end text-left md:text-right">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Ready to stop talking?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Ready to stop talking?</h2>
               <Button asChild size="lg" className="h-16 px-10 text-lg font-bold rounded-none hover:translate-y-[-2px] transition-transform w-full md:w-auto shadow-sm" data-testid="footer-cta-apply">
                 <Link href="/apply">Apply Now <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
