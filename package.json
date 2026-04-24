@@ -4,10 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter fcc-homepage run build",
-    "build:all": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./api-server\" --filter \"./fcc-homepage\" --filter \"./scripts\" --if-present run typecheck",
-    "dev": "pnpm --filter fcc-homepage run dev"
+    "dev": "pnpm --filter fcc-homepage run dev",
+    "typecheck": "pnpm --filter fcc-homepage run typecheck"
   },
   "private": true,
   "devDependencies": {

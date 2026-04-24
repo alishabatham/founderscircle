@@ -15,9 +15,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "references": [
-    {
-      "path": "../lib/api-client-react"
-    }
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"]
 }
