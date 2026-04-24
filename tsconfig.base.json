@@ -22,7 +22,7 @@
     "types": [],
     "customConditions": ["workspace"],
     "paths": {
-      "@workspace/*": ["./*"]
+      "@workspace/*": ["./*", "./lib/*"]
     }
   }
 }
