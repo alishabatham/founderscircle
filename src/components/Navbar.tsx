@@ -29,7 +29,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="font-black text-xl tracking-tighter text-foreground hover:text-primary transition-colors">
-              FCC
+              <img src="/fcc3.png" alt="Founders' Circle Connect Logo" className="h-23 w-auto" />         
             </Link>
 
             {/* Desktop Nav */}

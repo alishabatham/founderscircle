@@ -1,12 +1,19 @@
 import { CheckCircle2, ArrowRight, XCircle, Target, LayoutDashboard } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-foreground">
 
       {/* Hero */}
-      <section className="py-32 md:py-44 border-b border-border bg-white px-6 md:px-12">
+      <motion.section
+        className="py-32 md:py-44 border-b border-border bg-white px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container max-w-7xl mx-auto">
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-8">About Us</p>
           <h1
@@ -25,10 +32,16 @@ export default function AboutPage() {
             Founders' Circle Connect is a structured ecosystem designed to help founders move from ideas to execution through clarity, accountability, and the right network.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Startups Fail */}
-      <section className="py-28 border-b border-border bg-card px-6 md:px-12">
+      <motion.section
+        className="py-28 border-b border-border bg-card px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">01 / The Problem</span>
           <h2
@@ -54,7 +67,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What FCC Is */}
       <section className="py-28 border-b border-border bg-white px-6 md:px-12">
@@ -87,7 +100,13 @@ export default function AboutPage() {
       </section>
 
       {/* How FCC Works */}
-      <section className="py-28 border-b border-border bg-card px-6 md:px-12">
+      <motion.section
+        className="py-28 border-b border-border bg-card px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">03 / Entry Process</span>
           <h2
@@ -105,10 +124,16 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Core System */}
-      <section className="py-28 border-b border-border bg-white px-6 md:px-12">
+      <motion.section
+        className="py-28 border-b border-border bg-white px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">04 / Core System</span>
           <h2
@@ -130,10 +155,16 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Vision & Mission */}
-      <section className="py-28 border-b border-border bg-foreground text-white px-6 md:px-12">
+      <motion.section
+        className="py-28 border-b border-border bg-foreground text-white px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
@@ -156,10 +187,16 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why FCC Is Different */}
-      <section className="py-28 border-b border-border bg-white px-6 md:px-12">
+      <motion.section
+        className="py-28 border-b border-border bg-white px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">05 / Differentiation</span>
           <h2
@@ -189,10 +226,16 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Closing */}
-      <section className="py-28 bg-card text-center px-6 md:px-12">
+      <motion.section
+        className="py-28 bg-card text-center px-6 md:px-12"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-4xl mx-auto">
           <h2
             className="font-black leading-[0.9] tracking-tight mb-10"
@@ -210,7 +253,7 @@ export default function AboutPage() {
             Apply Now <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

@@ -1,14 +1,19 @@
 import { ArrowRight, CheckCircle2, XCircle } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen w-full bg-white text-foreground overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section
+      <motion.section
         className="relative w-full flex flex-col justify-end"
         style={{ minHeight: "100svh" }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Background gradient that mimics MU's full-bleed section */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/40" />
@@ -82,7 +87,7 @@ export default function HomePage() {
 
         {/* Bottom border */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-border" />
-      </section>
+        </motion.section>
 
       {/* ── STATS ────────────────────────────────────────────────────────── */}
       <section className="border-b border-border bg-white">
@@ -113,7 +118,13 @@ export default function HomePage() {
       </section>
 
       {/* ── WHAT FCC IS ──────────────────────────────────────────────────── */}
-      <section className="py-28 md:py-36 border-b border-border bg-white">
+      <motion.section
+        className="py-28 md:py-36 border-b border-border bg-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-12 gap-16 items-start">
             {/* Left: Large editorial heading */}
@@ -171,10 +182,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ── THE PROBLEM ──────────────────────────────────────────────────── */}
-      <section className="py-28 md:py-36 border-b border-border bg-card">
+      <motion.section
+        className="py-28 md:py-36 border-b border-border bg-card"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
             <div>
@@ -219,7 +236,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ── THE FCC SYSTEM ───────────────────────────────────────────────── */}
       <section className="py-28 md:py-36 border-b border-border bg-white">
@@ -295,7 +312,13 @@ export default function HomePage() {
       </section>
 
       {/* ── PROCESS ──────────────────────────────────────────────────────── */}
-      <section className="py-28 md:py-36 border-b border-border bg-card">
+      <motion.section
+        className="py-28 md:py-36 border-b border-border bg-card"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto px-6 md:px-12">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-8">04 / Process</span>
           <h2
@@ -337,10 +360,16 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ── WHO IT'S FOR ─────────────────────────────────────────────────── */}
-      <section className="py-28 md:py-36 border-b border-border bg-white">
+      <motion.section
+        className="py-28 md:py-36 border-b border-border bg-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-12 gap-16">
             <div className="md:col-span-5">
@@ -404,10 +433,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ── CTA STRIP ────────────────────────────────────────────────────── */}
-      <section className="py-28 md:py-36 bg-foreground text-white">
+      <motion.section
+        className="py-28 md:py-36 bg-foreground text-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         <div className="container max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12">
             <div>
@@ -452,24 +487,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
-      <footer className="border-t border-border bg-white py-12">
-        <div className="container max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-            <div className="font-bold text-foreground tracking-widest uppercase text-lg">FCC</div>
-            <div className="flex gap-8">
-              <Link href="/how-it-works" className="hover:text-foreground transition-colors">Process</Link>
-              <Link href="/programs" className="hover:text-foreground transition-colors">Programs</Link>
-              <Link href="/apply" className="hover:text-foreground transition-colors">Apply</Link>
-              <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
-              <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
-            </div>
-            <p>&copy; {new Date().getFullYear()} Founders' Circle Connect.</p>
-          </div>
-        </div>
-      </footer>
+      </motion.section>
     </div>
   );
 }
